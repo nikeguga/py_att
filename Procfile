@@ -1,0 +1,1 @@
+web: gunicorn py_attestation_project.wsgi
