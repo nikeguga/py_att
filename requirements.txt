@@ -2,3 +2,4 @@ Django>=4.2.0
 psycopg2>=2.9.9  # если используется PostgreSQL
 gunicorn>=20.1.0  # если нужен сервер для деплоя
 django-environ>=0.9.0  # для работы с .env
+Pillow>=10.0.0
