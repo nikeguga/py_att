@@ -1,12 +1,21 @@
 import os
+import environ
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-SECRET_KEY = os.getenv('SECRET_KEY')
+env = environ.Env(
+    DEBUG=(bool, False)
+)
 
-DEBUG = os.getenv('DEBUG', 'False') == 'True'
+# Чтение .env файла
+environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 
-ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS').split(',')
+SECRET_KEY = env('SECRET_KEY')
+DEBUG = env('DEBUG')
+ALLOWED_HOSTS = env.list('ALLOWED_HOSTS')
+DATABASES = {
+    'default': env.db(),
+}
 
 INSTALLED_APPS = [
     'django.contrib.admin',
