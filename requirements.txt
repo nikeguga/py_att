@@ -5,3 +5,4 @@ django-environ>=0.9.0  # для работы с .env
 Pillow>=10.0.0
 dj_database_url
 djangorestframework==3.14.0
+psycopg2
