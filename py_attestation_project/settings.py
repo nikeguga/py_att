@@ -102,3 +102,6 @@ LOGGING = {
 }
 
 CSRF_TRUSTED_ORIGINS = [os.getenv('CSRF_TRUSTED_ORIGINS')]
+
+LOGIN_REDIRECT_URL = 'recipe_list'  # Куда перенаправлять после успешного входа
+LOGOUT_REDIRECT_URL = 'recipe_list'  # Куда перенаправлять после выхода
