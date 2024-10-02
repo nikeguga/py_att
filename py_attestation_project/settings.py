@@ -15,7 +15,7 @@ SECRET_KEY = env('SECRET_KEY')
 DEBUG = env('DEBUG')
 ALLOWED_HOSTS = env.list('ALLOWED_HOSTS')
 DATABASES = {
-    'default': env.db(),
+    'default': dj_database_url.config(default=os.getenv('DATABASE_URL'))
 }
 
 INSTALLED_APPS = [
