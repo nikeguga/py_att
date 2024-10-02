@@ -1,1 +1,1 @@
-web: gunicorn py_attestation_project.wsgi
+web: gunicorn py_attestation_project.wsgi:application
